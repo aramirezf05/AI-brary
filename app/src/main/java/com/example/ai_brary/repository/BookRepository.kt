@@ -3,7 +3,7 @@ package com.example.ai_brary.repository
 import com.example.ai_brary.data.local.BookDao
 import com.example.ai_brary.data.model.toBook
 import com.example.ai_brary.data.remote.ApiService
-import com.example.bibliotecaapp.data.model.Book
+import com.example.ai_brary.data.model.Book
 
 class BookRepository(
     private val bookDao: BookDao,

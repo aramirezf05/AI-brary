@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AI-brary</string>
+
+    <string name="welcome_message">Welcome to AI-Brary 📚</string>
+    <string name="click_me_button">Click me!</string>
+    <string name="enable_camera_button">Enable Camera</string>
 </resources>

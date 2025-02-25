@@ -1,7 +1,5 @@
 package com.example.ai_brary.data.model
 
-import com.example.bibliotecaapp.data.model.Book
-
 data class GoogleBooksResponse(
     val items: List<BookItem>?
 )

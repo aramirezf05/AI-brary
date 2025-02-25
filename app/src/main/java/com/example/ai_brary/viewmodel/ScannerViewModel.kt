@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ai_brary.repository.BookRepository
-import com.example.bibliotecaapp.data.model.Book
+import com.example.ai_brary.data.model.Book
 import kotlinx.coroutines.launch
 
 class ScannerViewModel(private val repository: BookRepository) : ViewModel() {

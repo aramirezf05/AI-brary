@@ -9,21 +9,33 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ai_brary.module.AppComponent
+import com.example.ai_brary.utils.Navigator
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var navigator: Navigator
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (application as AIbraryApplication).appComponent.inject(this)
         enableEdgeToEdge()
         setContent {
-            MyApp()
+            MyApp(navigator)
         }
     }
 }
 
 @Composable
-fun MyApp() {
+fun MyApp(navigator: Navigator) {
+    val context = LocalContext.current
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier
@@ -34,14 +46,14 @@ fun MyApp() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Welcome to AI-Brary 📚",
+                text = stringResource(R.string.welcome_message),
                 fontSize = 24.sp
             )
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = {
-                println("Button clicked!")
+                navigator.navigateToBarcodeScanner(context)
             }) {
-                Text("Click me!")
+                Text(stringResource(R.string.click_me_button))
             }
         }
     }

@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.bibliotecaapp.data.model.Book
+import com.example.ai_brary.data.model.Book
 
 @Dao
 interface BookDao {

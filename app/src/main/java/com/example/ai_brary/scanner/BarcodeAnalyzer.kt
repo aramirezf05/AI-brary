@@ -10,10 +10,10 @@ import com.google.mlkit.vision.barcode.BarcodeScanning
 import androidx.camera.core.ImageProxy
 
 class BarcodeAnalyzer(
-    private val onBarcodeDetected: (String) -> Unit // Callback que recibe el ISBN
+    private val onBarcodeDetected: (String) -> Unit
 ) : ImageAnalysis.Analyzer {
 
-    private val scanner: BarcodeScanner = BarcodeScanning.getClient() // Cliente de ML Kit para escanear códigos de barras
+    private val scanner: BarcodeScanner = BarcodeScanning.getClient()
 
     @OptIn(ExperimentalGetImage::class)
     override fun analyze(imageProxy: ImageProxy) {
